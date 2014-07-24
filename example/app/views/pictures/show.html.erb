@@ -4,12 +4,13 @@
   <%= @picture.title %>
 </h1>
 <p>
-  <%= image_tag(@picture.image_url) if @picture.image? %>
+  <%= image_tag(@picture.image_url, size: '48x48') if @picture.image? %>
 </p>
 
 <%= form_for(@picture) do |f| %>
   <div class="field">
-    <%= f.fp_save_button :image, 'Download image', 'image/jpg' %>
+    <%= filepicker_image_tag(@picture.image_url) %>
+    <%= filepicker_save_button 'Download image', @picture.image_url, 'image/jpg' %>
   </div>
 <% end %>
 
