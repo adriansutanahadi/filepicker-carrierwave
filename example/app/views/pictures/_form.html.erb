@@ -18,7 +18,7 @@
   <div class="field">
     <%= f.label :image %><br />
     <%= image_tag(@picture.image_url || 'blank.png', id: 'pic', size: '48x48') %>
-    <%= f.filepicker_field :image, dragdrop: true, onchange: '$("#pic").attr("src", arguments[0].files[0].url)', data: { 'fp-mimetypes'=>'image/jpg,image/png,image/jpeg' } %>
+    <%= f.filepicker_field :remote_image_url, dragdrop: true, onchange: '$("#pic").attr("src", arguments[0].files[0].url)', data: { 'fp-mimetypes'=>'image/jpg,image/png,image/jpeg' } %>
     <%= f.hidden_field :image_cache %>
   </div>
   <div class="actions">
